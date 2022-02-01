@@ -1,0 +1,31 @@
+<h1>Let's take a look at people in space right now</h1>
+<h3>Here is a list of astronauts on the following space stations:</h3>
+<ul>
+	<li>ISS Space Station:</li>
+	{% for person in people.people%}
+		<ul>
+			{% if person.craft == 'ISS' %}
+				<li>
+					{{ person.name }}
+				</li>
+			{% endif %}
+		</ul>
+		
+	{% endfor %}
+	<li>Shenzhou 13:</li>
+	{% for person in people.people%}
+		<ul>
+			{% if person.craft == 'Shenzhou 13' %}
+				<li>
+					{{ person.name }} </b> is  abord the {{ person.craft }}
+				</li>
+			{% endif %}
+		</ul>
+		
+	{% endfor %}
+	<!-- {% for person in people.people%}
+		<li>
+			{{ person.name }} </b> is  abord the {{ person.craft }}
+		</li>
+	{% endfor %} -->
+</ul>
